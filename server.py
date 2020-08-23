@@ -14,6 +14,7 @@ mydb = mysql.connector.connect(
     database="pokemonDB"
 )
 
+# https://dev.mysql.com/doc/connector-python/en/connector-python-api-mysqlcursordict.html
 cursor = mydb.cursor(dictionary=True)
 
 @app.route('/api/pokemon', methods=['GET'])
