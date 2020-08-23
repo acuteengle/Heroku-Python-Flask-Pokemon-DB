@@ -1,3 +1,4 @@
+#https://stackabuse.com/deploying-a-flask-application-to-heroku/
 from flask import Flask, request
 app = Flask(__name__)
 import mysql.connector
@@ -8,10 +9,10 @@ import json
 # cors = CORS(app, resources={r"/api/*": {"origins": "http://127.0.0.1:5500"}})
 
 mydb = mysql.connector.connect(
-    host="localhost",
-    user="root",
-    passwd="test123*",
-    database="pokemonDB"
+    host="us-cdbr-east-02.cleardb.com",
+    user="bcaecb88351705",
+    passwd="eb7543b4",
+    database="heroku_b00d73486213106"
 )
 
 # https://dev.mysql.com/doc/connector-python/en/connector-python-api-mysqlcursordict.html
