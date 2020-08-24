@@ -13,7 +13,7 @@ mydb = mysql.connector.connect(
     host=os.environ.get('DB_HOST'),
     user=os.environ.get('DB_USER'),
     passwd=os.environ.get('DB_PASSWORD'),
-    database=os.environ.get('DB_DATABASE')
+    database=os.environ.get('DATABASE')
 )
 
 # https://dev.mysql.com/doc/connector-python/en/connector-python-api-mysqlcursordict.html
