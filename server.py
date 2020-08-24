@@ -3,16 +3,17 @@ from flask import Flask, request
 app = Flask(__name__)
 import mysql.connector
 import json
+import os
 
 # # https://flask-cors.corydolphin.com/en/latest/index.html
 # from flask_cors import CORS
 # cors = CORS(app, resources={r"/api/*": {"origins": "http://127.0.0.1:5500"}})
 
 mydb = mysql.connector.connect(
-    host="us-cdbr-east-02.cleardb.com",
-    user="bcaecb88351705",
-    passwd="eb7543b4",
-    database="heroku_b00d73486213106"
+    host=os.environ.get('DB_HOST'),
+    user=os.environ.get('DB_USER'),
+    passwd=os.environ.get('DB_PASSWORD'),
+    database=os.environ.get('DB_DATABASE')
 )
 
 # https://dev.mysql.com/doc/connector-python/en/connector-python-api-mysqlcursordict.html
