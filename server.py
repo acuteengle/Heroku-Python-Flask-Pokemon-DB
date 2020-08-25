@@ -11,6 +11,7 @@ import os
 from flask_cors import CORS
 cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
 
+# https://www.youtube.com/watch?v=I4Ra-80O3R4
 mydb = mysql.connector.connect(
     host=os.getenv('DB_HOST') if os.getenv('DB_HOST') else "",
     user=os.getenv('DB_USER') if os.getenv('DB_USER') else "",
