@@ -12,10 +12,10 @@ from flask_cors import CORS
 cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
 
 mydb = mysql.connector.connect(
-    host=os.getenv('DB_HOST'),
-    user=os.getenv('DB_USER'),
-    passwd=os.getenv('DB_PASSWORD'),
-    database=os.getenv('DATABASE')
+    host=os.getenv('DB_HOST') if os.getenv('DB_HOST') else "",
+    user=os.getenv('DB_USER') if os.getenv('DB_USER') else "",
+    passwd=os.getenv('DB_PASSWORD') if os.getenv('DB_PASSWORD') else "",
+    database=os.getenv('DATABASE') if os.getenv('DATABASE') else "",
 )
 
 # https://dev.mysql.com/doc/connector-python/en/connector-python-api-mysqlcursordict.html
